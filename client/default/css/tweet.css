@@ -1,0 +1,23 @@
+#tweets {
+	list-style: none;
+	margin: 0;
+	-webkit-padding-start: 0px;
+}
+#tweets li {
+	padding-bottom: 6px;
+	margin-bottom: 6px;
+	border-bottom: 1px solid #ccc;
+	padding-left: 15px;
+	padding-right: 15px;
+	clear: both;
+	min-height: 50px;
+}
+#tweets img {
+	float: left;
+	margin-right: 10px;
+}
+#tweets p {
+	line-height: 1.4em;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+}
