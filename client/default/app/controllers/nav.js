@@ -20,7 +20,6 @@ var nav = {
 
 			}
 			$("#twitter #tweets").html(html);
-      
 			$.mobile.hidePageLoadingMsg();
 			changeView("twitter");
 
@@ -45,17 +44,4 @@ var nav = {
 			}
 		});
 	},
-	webview : function() {
-		$fh.webview({
-			title : 'FeedHenry',
-			url : 'http://www.feedhenry.com/'
-		});
-	},
-  stocks: function() {
-    changeView('stocks');
-  },
-	settings : function() {
-		changeView("settings");
-		settingsController.loadSettings();
-	}
 }

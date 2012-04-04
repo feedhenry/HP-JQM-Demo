@@ -98,10 +98,3 @@ function getPoints() {
   }
   return response;
 }
-
-/**
- * Get stock symbol and detailed information by company name
- */
-function getStockInfo(param) {
-  return stock.getStockInfo(param.name);
-}
