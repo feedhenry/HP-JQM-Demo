@@ -1,34 +1,4 @@
 /*
- * Twitter
- */
-function getTweets() {
-  var username   = 'feedhenry';
-  var num_tweets = 10;
-  var url        = 'http://search.twitter.com/search.json?q=' + username;
-
-  var response = $fh.web({
-    url: url,
-    method: 'GET',
-    allowSelfSignedCert: true
-  });
-  return {'data': $fh.parse(response.body).results};
-}
-
-/*
- * Payment
- */ 
-function payment() {
-  var cardType   = $params.cardType;
-  var cardNumber = $params.cardNumber;
-  var url = "http://www.webservicex.net/CreditCard.asmx/ValidateCardNumber?cardType=" + cardType + "&cardNumber=" + cardNumber;
-
-  return $fh.web({
-    url: url,
-    method: 'GET'
-  });
-}
-
-/*
  * Maps
  */
 // Cache points for 10 seconds
@@ -97,11 +67,4 @@ function getPoints() {
     }
   }
   return response;
-}
-
-/**
- * Get stock symbol and detailed information by company name
- */
-function getStockInfo(param) {
-  return stock.getStockInfo(param.name);
 }
