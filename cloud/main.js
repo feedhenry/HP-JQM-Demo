@@ -15,20 +15,6 @@ function getTweets() {
 }
 
 /*
- * Payment
- */ 
-function payment() {
-  var cardType   = $params.cardType;
-  var cardNumber = $params.cardNumber;
-  var url = "http://www.webservicex.net/CreditCard.asmx/ValidateCardNumber?cardType=" + cardType + "&cardNumber=" + cardNumber;
-
-  return $fh.web({
-    url: url,
-    method: 'GET'
-  });
-}
-
-/*
  * Maps
  */
 // Cache points for 10 seconds
@@ -97,11 +83,4 @@ function getPoints() {
     }
   }
   return response;
-}
-
-/**
- * Get stock symbol and detailed information by company name
- */
-function getStockInfo(param) {
-  return stock.getStockInfo(param.name);
 }

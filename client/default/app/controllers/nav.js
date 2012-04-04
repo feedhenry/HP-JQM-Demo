@@ -20,42 +20,10 @@ var nav = {
 
 			}
 			$("#twitter #tweets").html(html);
-      
 			$.mobile.hidePageLoadingMsg();
 			changeView("twitter");
 
 		});
-	},
-	creditcard : function() {
-		changeView("creditcard");
-	},
-	camera : function() {
-		$fh.cam({
-			act : 'picture',
-			uri : true
-		}, function(res) {
-			if(res.uri) {
-				// Store the filepath to the image
-				var pathToImage = res.uri;
-
-				// Change the view
-				changeView("camera");
-				// Update the view
-				$("#camera .content img").attr("src", pathToImage);
-			}
-		});
-	},
-	webview : function() {
-		$fh.webview({
-			title : 'FeedHenry',
-			url : 'http://www.feedhenry.com/'
-		});
-	},
-  stocks: function() {
-    changeView('stocks');
-  },
-	settings : function() {
-		changeView("settings");
-		settingsController.loadSettings();
 	}
+	
 }
