@@ -3,7 +3,9 @@
 	text-align:center;
 }
 .header img{
-	margin-top:5px;
+	margin-top: 1px;
+	/*margin-right: 35px;*/
+	height: 99%;
 }
 
 
