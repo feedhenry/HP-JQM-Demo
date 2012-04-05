@@ -275,7 +275,7 @@ This stylesheet then need to be referenced in the Payment page. Add the followin
 ## Step 10
 Verify what you have made is working by trying to to do a look up of Google. You should receive the output shown below.
 
-![](https://github.com/feedhenry/HP-JQM-Demo/raw/master/docs/Stocks.png)
+![](https://github.com/feedhenry/HP-JQM-Demo/raw/master/docs/StocksResult.png)
 
 
 Checkout the [v7 branch](https://github.com/feedhenry/HP-JQM-Demo/tree/v7) to see the completed code.
