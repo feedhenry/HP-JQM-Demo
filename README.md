@@ -5,7 +5,7 @@ For this part of the tutorial we will create a page with access to the camera. T
 
 * Learn to use $fh.cam()
 
-![](https://github.com/feedhenry/FH-Training-App-JQM/raw/master/docs/CameraView.png)
+![](https://github.com/feedhenry/HP-JQM-Demo/raw/master/docs/CameraView.png)
 
 
 ## Step 1
@@ -46,7 +46,7 @@ Now that we have our code completed we need to update index.html to include our 
 
 	`<div data-add-back-btn="true" data-role="page" class="page" id="camera"></div>`
 
-Checkout the [v6 branch](https://github.com/feedhenry/FH-Training-App-JQM/tree/v6) to see the completed code.
+Checkout the [v6 branch](https://github.com/feedhenry/HP-JQM-Demo/tree/v6) to see the completed code.
 
 Next step of tutorial will introduce how to use webview to open external web pages.
 
