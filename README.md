@@ -5,7 +5,7 @@ This short part of the tutorial will show you how to create a webview within you
 
 * Initialize a webview using the FeedHenry API
 
-![](https://github.com/feedhenry/FH-Training-App-JQM/raw/master/docs/WebView.png)
+![](https://github.com/feedhenry/HP-JQM-Demo/raw/master/docs/WebView.png)
 
 
 ## Step 1
@@ -21,6 +21,6 @@ The code below is used to initialize the webview by clicking on the web icon and
 		},
 
 
-Checkout the [v7 branch](https://github.com/feedhenry/FH-Training-App-JQM/tree/v7) to see the completed code.
+Checkout the [v7 branch](https://github.com/feedhenry/HP-JQM-Demo/tree/v7) to see the completed code.
 
 Next step will introduce how to use On-Device Local storage to save/load data.
