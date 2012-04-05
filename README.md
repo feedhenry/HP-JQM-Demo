@@ -6,7 +6,7 @@ In this tutorial we will add a new page for the Google Maps page. You will learn
 * Integrate an app with the Google Maps API
 * Learn to use FeedHenry APIs
 
-![](https://github.com/feedhenry/FH-Training-App-JQM/raw/master/docs/MapView.png)
+![](https://github.com/feedhenry/HP-JQM-Demo/raw/master/docs/MapView.png)
 
 ## Step 1
 Create a file called googleMap.html in the views folder (client/default/app/views) and add the following code to create the Maps page:
@@ -272,6 +272,6 @@ In the 'main.js' file found in the cloud directory, find the following code snip
 
 Change the longitude and latitude values and then view the map page. The markers on the page should now be located in a new position.
 
-Checkout the [v3 branch](https://github.com/feedhenry/FH-Training-App-JQM/tree/v3) to see the completed code.
+Checkout the [v3 branch](https://github.com/feedhenry/HP-JQM-Demo/tree/v3) to see the completed code.
 
 Next will introduce how to implement a list view using twitter resource.
