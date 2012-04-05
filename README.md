@@ -7,7 +7,7 @@ In this tutorial we will be adding a new view for credit card validation. This w
 * Learn to use input fields and read from them
 * Use $fh.web()
 
-![](https://github.com/feedhenry/FH-Training-App-JQM/raw/master/docs/CreditCard.png)
+![](https://github.com/feedhenry/HP-JQM-Demo/raw/master/docs/CreditCard.png)
 
 ## Step 1
 Begin by creating the creditcard.html file in the views folder (client/default/app/views) and add the following code.
@@ -150,9 +150,9 @@ This stylesheet then need to be referenced in the Payment page. Add the followin
 ## Step 8
 Verify what you have made is working by trying to validate a number sequence such as '0000000000000000'. You should receive the output shown below.
 
-![](https://github.com/feedhenry/FH-Training-App-JQM/raw/master/docs/CreditCardCall.png)
+![](https://github.com/feedhenry/HP-JQM-Demo/raw/master/docs/CreditCardCall.png)
 
-Checkout the [v5 branch](https://github.com/feedhenry/FH-Training-App-JQM/tree/v5) to see the completed code.
+Checkout the [v5 branch](https://github.com/feedhenry/HP-JQM-Demo/tree/v5) to see the completed code.
 
 
 Next step will introduce how to access native functionality -- Camera.
