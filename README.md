@@ -7,7 +7,7 @@ This part of the tutorial will teach you how to use save and load setting from t
 * Use the $fh.data() function
 * Use many types of input fields and components.
 
-![](https://github.com/feedhenry/FH-Training-App-JQM/raw/master/docs/SettingsView.png)
+![](https://github.com/feedhenry/HP-JQM-Demo/raw/master/docs/SettingsView.png)
 
 
 ## Step 1
@@ -135,4 +135,4 @@ This page also needs to be referneced in the index.html page.
 
 		<div data-add-back-btn="true" data-role="page" class="page" id="settings"></div>
 
-Checkout the [v8 branch](https://github.com/feedhenry/FH-Training-App-JQM/tree/v8) to see the completed code.
+Checkout the [v8 branch](https://github.com/feedhenry/HP-JQM-Demo/tree/v8) to see the completed code.
