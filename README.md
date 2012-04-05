@@ -6,7 +6,7 @@ In this tutorial we will add a new view for a Twitter feed page. You will learn 
 * Integrate an app with Twitter to pull tweets with a specified username 
 * Use the $fh.web() function to make a web request for your app
 
-![](https://github.com/feedhenry/FH-Training-App-JQM/raw/master/docs/TwitterView.png)
+![](https://github.com/feedhenry/HP-JQM-Demo/raw/master/docs/TwitterView.png)
 
 ## Step 1
 To create the Twitter page in the app, go to the views folder (client/default/app/views) amd create a twitter.html file. Use the code below in this file.
@@ -139,8 +139,8 @@ This stylesheet then needs to be referenced in the Twitter page. Add the followi
 
 `<link rel="stylesheet" type="text/css" href="./css/tweet.css"/>`
 
-![](https://github.com/feedhenry/FH-Training-App-JQM/raw/master/docs/Tweets.png)
+![](https://github.com/feedhenry/HP-JQM-Demo/raw/master/docs/Tweets.png)
 
-Checkout the [v4 branch](https://github.com/feedhenry/FH-Training-App-JQM/tree/v4) to see the completed code.
+Checkout the [v4 branch](https://github.com/feedhenry/HP-JQM-Demo/tree/v4) to see the completed code.
 
 Next step will introduce how to use remote SOAP services -- Credit card validation
