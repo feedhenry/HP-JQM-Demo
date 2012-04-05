@@ -124,5 +124,5 @@ Content of index.html:
 -----
 
 Next Step: 
-[v1 branch](https://github.com/feedhenry/FH-Training-App-JQM/tree/v1), constuct app navigation structure.
+[v1 branch](https://github.com/feedhenry/HP-JQM-Demo/tree/v1), constuct app navigation structure.
 
