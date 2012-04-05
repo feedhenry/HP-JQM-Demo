@@ -54,4 +54,9 @@ var nav = {
 		changeView("settings");
 		settingsController.loadSettings();
 	}
+},
+
+  stocks: function() {
+    changeView('stocks');
+  }
 }
