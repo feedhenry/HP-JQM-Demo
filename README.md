@@ -153,12 +153,12 @@ file closely and read the API information [here](http://docs.feedhenry.com/api-r
 
 ## Step 5
 Now we are going to implement the Cloud features of the FeedHenry platform. You might have noticed in the Map controller we call the 
-FeedHenry $fh.act() call. This allows us to call a function from the server (cloud), read more about this [here](http://docs.feedhenry.com/api-reference/actions/). In the cloud directory add the following code to the main.js file. Functions in the Cloud directory can be called from devide via a $fh.act() call.
+FeedHenry $fh.act() call. This allows us to call a function from the server (cloud), read more about this [here](http://docs.feedhenry.com/v2/feedhenry-api.html#$fh.act). In the cloud directory add the following code to the main.js file. Functions in the Cloud directory can be called from devide via a $fh.act() call.
 
 		/*
 		 * Maps
 		 */
-		// Cache points for 10 seconds
+		// Cache points for 30 seconds
 		var CACHE_TIME = 30;
 		var MARKERS = {
 		  locations: [
@@ -172,15 +172,17 @@ FeedHenry $fh.act() call. This allows us to call a function from the server (clo
 		    }
 		  ]
 		};
-
-		function getCachedPoints() {
-		  var ret = $fh.cache({
+		
+		function getCachedPoints(params,callback) {
+		  $fh.cache({
 		    "act": "load",
 		    "key": "points"
+		  },function(err,res){
+		    callback(err,res);
 		  });
-		  return ret.val;
+		  
 		}
-
+		
 		function cachePoints(hash, data) {
 		  var obj = {
 		    "hash": hash,
@@ -190,41 +192,49 @@ FeedHenry $fh.act() call. This allows us to call a function from the server (clo
 		  $fh.cache({
 		    "act": "save",
 		    "key": "points",
-		    "val": obj,
+		    "value": JSON.stringify(obj),
 		    "expire": CACHE_TIME
+		  }, function(err, res) {
+		    console.log('cachePoints :: err = ', err, ' :: res = ', res);
 		  });
 		}
-
-		function getPoints() {
+		
+		function getPoints(params,callback) {
 		  var response = {};
-		  var cache    = getCachedPoints();
-
-		  if (cache.length === 0) {
-		    var data = MARKERS;
-		    var hash = $fh.hash({
-		      algorithm: 'MD5',
-		      text: $fh.stringify(data)
-		    });
-
-		    // Cache the data
-		    cachePoints(hash, data);
-
-		    // Build the response
-		    response = {'data': data, 'hash':hash, 'cached':false};
-		  } else {
-		    // Parse the cached data
-		    cache = $fh.parse(cache);
-
-		    if( $params.hash && $params.hash === cache.hash ) {
-		      // Client data is up to date
-		      response = {'hash':$params.hash, 'cached':true};
-		    } else {
-		      // Hash value from client missing or incorrect, return cached cloud data
-		      response = cache;
+		  getCachedPoints({}, function(err, res) {
+		    console.log('getCachedPoints :: err = ', err, ' :: res = ', res);
+		    if( res ) {
+		      console.log('getPoints - cached response = ', res);
+		      // Parse the cached data
+		      var cache = JSON.parse(res);
+		
+		      if( params.hash && params.hash === cache.hash ) {
+		        // Client data is up to date
+		        response = {'hash':params.hash, 'cached':true};
+		      } else {
+		        // Hash value from client missing or incorrect, return cached cloud data
+		        response = cache;
+		      }      
 		    }
-		  }
-		  return response;
+		    else {
+		      var data = MARKERS;
+		      var crypto=require("crypto");
+		      var md5=crypto.createHash("md5");
+		      var hash=md5.update(JSON.stringify(data)).digest("hex");
+		      // Cache the data
+		      cachePoints(hash, data);
+		  
+		      // Build the response
+		      response = {'data': data, 'hash':hash, 'cached':false};
+		    } 
+		    callback(null, response);
+		  });
 		}
+		
+		module.exports={
+			getCachedPoints:getCachedPoints,
+			getPoints:getPoints
+		};
 
 
 ## Step 6
