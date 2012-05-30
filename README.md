@@ -13,7 +13,7 @@ Create a file called googleMap.html in the views folder (client/default/app/view
 
                     <link rel="stylesheet"  type="text/css" href="./css/map.css"/>
 	    <!-- Google Maps API -->
-	    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+	    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
 
 
 	    <div  class="header" data-role="header">
@@ -57,11 +57,11 @@ In the models folder (client/default/app/models), create a map.js file and add t
 							hash : hash,
 							timestamp : new Date().getTime()
 						}
-					}, function(res) {
-						that.data = res;
+					}, function(res) {						
 						if(hash && hash === res.hash) {
 							console.log("Client data is at the latest version");
 						} else {
+							that.data = res;
 							$fh.data({
 								act : 'save',
 								key : 'points',
@@ -92,8 +92,8 @@ file closely and read the API information [here](http://docs.feedhenry.com/api-r
 					$("#mapCanvas").height($(window).height() - $(".header").height());
 					$fh.map({
 						target : '#mapCanvas',
-						lat : -34.397,
-						lon : 150.644,
+						lat : 36.12342, 
+						lon : -115.17075,
 						zoom : 11
 					}, function(map) {
 						that.map=map.map;
@@ -163,12 +163,12 @@ FeedHenry $fh.act() call. This allows us to call a function from the server (clo
 		var MARKERS = {
 		  locations: [
 		    {
-		      lat: '52.245671',
-		      lon: '-7.080002'
+		      lat: '36.12242',
+		      lon: '-115.16975'
 		    },
 		    {
-		      lat: '52.257861',
-		      lon: '-7.136993'
+		      lat: '36.12442',
+		      lon: '-115.17175'
 		    }
 		  ]
 		};
@@ -200,6 +200,7 @@ FeedHenry $fh.act() call. This allows us to call a function from the server (clo
 		}
 		
 		function getPoints(params,callback) {
+		  
 		  var response = {};
 		  getCachedPoints({}, function(err, res) {
 		    console.log('getCachedPoints :: err = ', err, ' :: res = ', res);
@@ -209,7 +210,7 @@ FeedHenry $fh.act() call. This allows us to call a function from the server (clo
 		      var cache = JSON.parse(res);
 		
 		      if( params.hash && params.hash === cache.hash ) {
-		        // Client data is up to date
+		        console.log('Hash check matches - Client data is up to date');
 		        response = {'hash':params.hash, 'cached':true};
 		      } else {
 		        // Hash value from client missing or incorrect, return cached cloud data
